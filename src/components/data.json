@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "img": "https://spaceandlight.la/wp-content/uploads/2021/02/ecommerce-on-model-header-3.jpg",
+        "title": "SUMMER SALE",
+        "desc" : "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        "bg": "FFEAD6"
+    },
+    {
+        "id": 2,
+        "img": "https://i.pinimg.com/564x/37/8f/9f/378f9fc796b02879c6b628bb633d829c.jpg",
+        "title": "AUTUMN SALE",
+        "desc" : "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        "bg": "fcf1ed"
+    },
+    {
+        "id": 3,
+        "img": "https://i.pinimg.com/564x/75/38/8a/75388a03b49ce06055480cfd8ed3a79a.jpg",
+        "title": "WINTER SALE",
+        "desc" : "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        "bg": "f5fafd"
+    },
+    {
+        "id": 4,
+        "img": "https://i.pinimg.com/564x/de/30/34/de3034811a2e98013b90bdaa2f32cdb8.jpg",
+        "title": "POPULAR SALE", 
+        "desc" : "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        "bg": "fbf0f4"
+    }
+]

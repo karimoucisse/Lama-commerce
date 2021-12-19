@@ -1,14 +1,20 @@
 import styled from "styled-components"
+import { useState } from "react";
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
+import SliderItems from './data.json'
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 30px);
     display: flex;
     position : relative;
+    overflow : hidden;
 `
 const Wrapper = styled.div`
     height : 100%;
+    display : flex;
+    transition : all 1s ease;
+    transform: translateX(${props => props.slideIndex * -100}vw)
 `
 const Arrow = styled.div`
     width: 50px;
@@ -26,6 +32,7 @@ const Arrow = styled.div`
     margin : auto;
     cursor : pointer;
     opacity : 0.5;
+    z-index : 2;
     &:hover {
         opacity : 1;
     }
@@ -35,15 +42,19 @@ const Slide = styled.div`
     height: 100vh;
     display : flex ; 
     align-items : center;
+    background-color : #${props => props.bg}
 `;
 const ImgContainer = styled.div`
     height: 100%;
     flex: 1;
     display : flex;
     justify-content: center;
+    align-items : center;
 `;
 const Image = styled.img`
     height: 80%;
+    border-radius : 20px;
+    object-fit : fill;
 `
 const InfoContainer = styled.div`
     flex: 1;
@@ -64,7 +75,7 @@ const Button = styled.button`
     font-size : 20px;
     font-weight : 500;
     border-radius : 10px;
-    background-color : transparent;
+    background-color : #fff;
     cursor : pointer;
     border : 2px solid teal;
     transition : all in ease 0.4s;
@@ -74,26 +85,37 @@ const Button = styled.button`
         transform : scale(1.02);
     }
 `
-// https://i.pinimg.com/564x/de/30/34/de3034811a2e98013b90bdaa2f32cdb8.jpg
 const Slider = () => {
+    const [slideIndex, setSlideIndex] = useState(0)
+
+    const handleClick = (direction) => {
+        if(direction === "left") {
+            setSlideIndex(slideIndex > 0 ? slideIndex -1 : 3)
+        }else {
+            setSlideIndex(slideIndex < 3 ? slideIndex +1 : 0)
+        }
+    }
+    console.log(SliderItems);
     return (
         <Container>
-            <Arrow direction= "left">
+            <Arrow direction= "left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlinedIcon/>
             </Arrow>
-            <Wrapper>
-                <Slide>
-                    <ImgContainer>
-                        <Image src="https://spaceandlight.la/wp-content/uploads/2021/02/ecommerce-on-model-header-3.jpg"/>
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>Summer Sales</Title>
-                        <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-                        <Button>SHOP NOW</Button>
-                    </InfoContainer>
-                </Slide>
+            <Wrapper slideIndex= {slideIndex}>
+                {SliderItems.map(item => ( 
+                    <Slide bg={item.bg}>
+                        <ImgContainer>
+                            <Image src={item.img}/>
+                        </ImgContainer>
+                        <InfoContainer>
+                            <Title>{item.title}</Title>
+                            <Desc>{item.desc}</Desc>
+                            <Button>SHOP NOW</Button>
+                        </InfoContainer>
+                    </Slide>
+                ))}
             </Wrapper>
-            <Arrow direction= "right">
+            <Arrow direction= "right" onClick={() => handleClick("right")}>
                 <ArrowRightOutlinedIcon/>
             </Arrow> 
         </Container>

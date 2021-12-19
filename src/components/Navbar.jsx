@@ -5,6 +5,10 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Container = styled.div`
     height : 60px;
+    position : fixed;
+    z-index : 3;
+    width : 100%;
+    background-color: #ffff;
 `
 
 const Wrapper = styled.div`
@@ -36,6 +40,7 @@ const SearchContainer = styled.div`
 const Input = styled.input`
     border: none;
     outline : none;
+    font-size : 15.5px;
 `
 
 const Center = styled.div`
