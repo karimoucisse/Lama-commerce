@@ -1,25 +1,39 @@
 import styled from "styled-components"
 
 const Container = styled.div`
-
+    flex : 1;
+    margin : 3px;
+    height : 85vh;
+    position : relative;
 `
 const Image = styled.img`
-
+    width : 100%;
+    height : 100%;
+    object-fit : cover;
 `
 const Info = styled.div`
-
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height: 100%;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    flex-direction : column;
+    gap : 20px;
 `
 const Title = styled.h1`
-
+    color : #ffff;
+    text-shadow : 4px 4px 3px  black;
 `
 const Button = styled.button`
-    padding : 5px;
-    font-weight : 500;
+    padding : 10px;
+    border : none;
     border-radius : 10px;
+    color : grey;
     background-color : #fff;
     cursor : pointer;
-    border : 2px solid teal;
-    transition : all in ease 0.4s;
     &:hover {
         background-color : teal;
         color : #ffff;
