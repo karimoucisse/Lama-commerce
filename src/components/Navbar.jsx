@@ -5,10 +5,10 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Container = styled.div`
     height : 60px;
-    position : fixed;
-    z-index : 3;
-    width : 100%;
-    background-color: #ffff;
+    // position : fixed;
+    // z-index : 3;
+    // width : 100%;
+    // background-color: #ffff;
 `
 
 const Wrapper = styled.div`

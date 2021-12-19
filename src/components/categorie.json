@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "img": "https://img.ltwebstatic.com/images3_pi/2021/05/24/1621846921c9938fc8f305dfa17b9c181ed13d04a9_thumbnail_900x.webp",
+        "title": "T-SHIRTS"
+    },
+    {
+        "id": 2,
+        "img": "https://img.ltwebstatic.com/images3_pi/2020/11/14/16053348301ffbc824e9cae7944fce0b7147fc9ca7_thumbnail_900x.webp",
+        "title": "DRESS"
+    },
+    {
+        "id": 3,
+        "img": "https://img.ltwebstatic.com/images3_pi/2021/11/19/1637305064b9067f9b3ad9c7cff1d53defaac0f9e1.webp",
+        "title": "COAT"
+    }
+]

@@ -5,7 +5,7 @@ import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import SliderItems from './data.json'
 const Container = styled.div`
     width: 100%;
-    height: calc(100vh - 30px);
+    height: calc(100vh );
     display: flex;
     position : relative;
     overflow : hidden;
@@ -42,7 +42,7 @@ const Slide = styled.div`
     height: 100vh;
     display : flex ; 
     align-items : center;
-    background-color : #${props => props.bg}
+    background-color : #${props => props.bg};
 `;
 const ImgContainer = styled.div`
     height: 100%;
@@ -52,9 +52,10 @@ const ImgContainer = styled.div`
     align-items : center;
 `;
 const Image = styled.img`
-    height: 80%;
-    border-radius : 20px;
-    object-fit : fill;
+    height: 85%;
+    // width : 70%;
+    //border-radius : 40px;
+    object-fit : cover;
 `
 const InfoContainer = styled.div`
     flex: 1;
@@ -90,12 +91,11 @@ const Slider = () => {
 
     const handleClick = (direction) => {
         if(direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex -1 : 3)
+            setSlideIndex(slideIndex > 0 ? slideIndex -1 : 4)
         }else {
-            setSlideIndex(slideIndex < 3 ? slideIndex +1 : 0)
+            setSlideIndex(slideIndex < 4 ? slideIndex +1 : 0)
         }
     }
-    console.log(SliderItems);
     return (
         <Container>
             <Arrow direction= "left" onClick={() => handleClick("left")}>
@@ -103,7 +103,10 @@ const Slider = () => {
             </Arrow>
             <Wrapper slideIndex= {slideIndex}>
                 {SliderItems.map(item => ( 
-                    <Slide bg={item.bg}>
+                    <Slide 
+                        key= {item.id}
+                        bg={item.bg}
+                    >
                         <ImgContainer>
                             <Image src={item.img}/>
                         </ImgContainer>
