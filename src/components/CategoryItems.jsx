@@ -22,22 +22,29 @@ const Info = styled.div`
     justify-content : center;
     flex-direction : column;
     gap : 20px;
+    cursor : pointer;
+    &:hover {
+        background : rgba(0,0,0,0.3);
+    }
 `
 const Title = styled.h1`
     color : #ffff;
     text-shadow : 4px 4px 3px  black;
+    letter-spacing : 3px;
 `
 const Button = styled.button`
     padding : 10px;
     border : none;
     border-radius : 10px;
-    color : grey;
-    background-color : #fff;
+    color : black;
+    background-color : rgba(255,255,255,0.6);
     cursor : pointer;
+    font-weight: 700;
     &:hover {
-        background-color : teal;
-        color : #ffff;
+        background-color : #fff;
+        color : black;
         transform : scale(1.02);
+        box-shadow : 2px 2px 6px rgba(0,0,0,0.6);
     }
 `
 const CategoryItems = ({title, image}) => {
